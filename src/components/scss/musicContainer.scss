@@ -1,0 +1,63 @@
+@mixin inter24B {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.music-container {
+  margin-top: 32px;
+
+  .music-header {
+    @include inter24B;
+    color: #fff;
+  }
+
+  .music-comp-container {
+    margin-top: 16px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 12px;
+
+    .music-component {
+      display: grid;
+      grid-template-columns: 73px auto 60px;
+      grid-template-rows: 73px;
+      background-color: #434343;
+      box-shadow: 0 6px 12px rgba(#000, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.1s ease-in;
+
+      .music-album-thumbnail {
+        transition: all 0.1s ease-in;
+
+        img {
+          width: 73px;
+        }
+      }
+
+      .music-title {
+        @include inter24B;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        transition: all 0.1s ease-in;
+      }
+
+      .music-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .active {
+      background-color: #F1B61A;
+
+      .music-title {
+        color: #121212;
+      }
+    }
+  }
+}

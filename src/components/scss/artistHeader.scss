@@ -1,0 +1,61 @@
+
+$yellow: #F1B61A;
+
+@mixin inter36B {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 36px;  
+}
+
+.artist-header {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .info-button {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+
+  .image-container {
+  
+    img {
+      width: 192px;
+      height: 192px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(#000, 0.12);
+    }
+  }
+
+  .artist-name-header {
+    @include inter36B;
+    color: #fff;
+    margin-top: 16px
+  }
+
+  .header-button-container {
+    margin-top: 20px;
+    
+    .header-button {
+      padding: 14px 28px;
+      border-radius: 100px;
+      background-color: $yellow;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      display: inline-block;
+    }
+  }
+}

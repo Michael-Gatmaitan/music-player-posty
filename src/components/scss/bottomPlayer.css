@@ -1,0 +1,112 @@
+.bottom-player {
+  width: 100%;
+  padding: 15px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.bottom-player .track-opener {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 4;
+}
+
+.bottom-player .track-opener .arm {
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #121212;
+  margin-top: 10px;
+}
+
+.bottom-player .song-duration-progress {
+  width: 0;
+  height: 4px;
+  background-color: #F1B61A;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bottom-player .song-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.bottom-player .song-info .song-info-TBS-container {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bottom-player .song-info .song-info-TBS-container img {
+  width: 100%;
+}
+
+.bottom-player .song-info .info-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 3px;
+  margin-left: 6px;
+}
+
+.bottom-player .song-info .info-container .song-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bottom-player .song-info .info-container .song-featured {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+.bottom-player .state {
+  width: 48px;
+  height: 48px;
+  background-color: #E2E2EF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  z-index: 5;
+}
+/*# sourceMappingURL=bottomPlayer.css.map */

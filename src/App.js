@@ -1,153 +1,99 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ReactPlayer from 'react-player';
 import ReactAudioPlayer from 'react-audio-player';
-import { MusicContext } from './MusicContext';
 
-import Postie1 from '../src/music/post_malone/Post Malone - Better Now.mp3';
-import Postie2 from '../src/music/post_malone/Post Malone - Candy Paint.mp3';
-import Postie3 from '../src/music/post_malone/Post Malone - Circles.mp3';
-import Postie4 from '../src/music/post_malone/Post Malone - Goodbyes.mp3';
-import Postie5 from '../src/music/post_malone/Post Malone - I Fall Apart (Lofi Version).mp3';
-import Postie6 from '../src/music/post_malone/Post Malone - I Fall Apart.m4a';
-import Postie7 from '../src/music/post_malone/Post Malone - Psycho ft. Ty Dolla Ign.m4a';
-import Postie8 from '../src/music/post_malone/Post Malone - Take It Back ft. Juice WRLD.mp3';
-import Postie9 from '../src/music/post_malone/Post Malone, Swae Lee - Sunflower.mp3';
+// Components
+import ArtistHeader from './components/artistHeader';
+import MusicContainer from './components/musicContainer';
+import BottomPlayer from './components/bottomPlayer';
+import MusicTrack from './components/musicTrack';
 
 function App() {
 
-  // Percent = (n / wn) = P% * 100 = 100P%
+	// Percent = (n / wn) = P% * 100 = 100P%
 
-  let player = useRef(null);
-  // let [music, setMusic] = useState(null);
-  // let [vol, setVol] = useState(1);
+	let player = useRef(null);
+	let [activeIndex, setActiveIndex] = useState(null);
 
-  let [currentMusic, setCurrentMusic] = useState(null);
-  let [currentMusicTitle, setCurrentMusicTitle] = useState(null);
-  // let [isPlaying, setIsPlaying] = useState(false);
+	let [currentMusic, setCurrentMusic] = useState(null);
 
-  let post_malone = {
-    artist: {
-      name: 'Post Malone',
-      image: ''
-    },
-    musics: [
-        {
-          src: Postie1,
-          title: 'Post Malone - Better Now'
-        }, {
-          src: Postie2,
-          title: 'Post Malone - Candy Paint'
-        }, {
-          src: Postie3,
-          title: 'Post Malone - Circles'
-        }, {
-          src: Postie4,
-          title: 'Post Malone - Goodbyes'
-        }, {
-          src: Postie5,
-          title: 'Post Malone - I Fall Apart (Lofi Version)'
-        }, {
-          src: Postie6,
-          title: 'Post Malone - I Fall Apart'
-        }, {
-          src: Postie7,
-          title: 'Post Malone - Psycho ft. Ty Dolla Ign'
-        }, {
-          src: Postie8,
-          title: 'Post Malone - Take It Back ft. Juice WRLD'
-        }, {
-          src: Postie9,
-          title: 'Post Malone, Swae Lee - Sunflower'
-        }
-      ]
-  };
+	let [playing, setPlaying] = useState(false);
 
-  let [seconds, setSeconds] = useState(0);
-  let [duration, setDuration] = useState(0);
+	let [seconds, setSeconds] = useState(0);
+	let [duration, setDuration] = useState(0);
 
-  // Duration Handler
-  let durTemp = null;
-  useEffect(() => {
-    let audPlayer = document.getElementById('player');
-    audPlayer.addEventListener('durationchange', () => {
-      setDuration(audPlayer.duration);
-    })
+  let [showTrack, setShowTrack] = useState(false);
 
-    window.addEventListener('dblclick', e => {
-      // player.pause();
-      // console.log(player.audioEl.current.pause);
-      audPlayer.paused ? audPlayer.play() : audPlayer.pause();
-      // for (let i in player.audioEl.current) {
-      //   console.log(i);
-      // }
-    })
-  }, [durTemp]);
-  
-  return (
-    <React.Fragment>
-      <ReactAudioPlayer
-        src={currentMusic}
-        autoPlay
-        controls
-        ref={ e => player = e }
-        id="player"
-        onCanPlayThrough={() => console.log('player can now fully played') }
-        onLoadedMetadata={ () => console.log("Metadata Downloaded") }
-        // onCanPlayThrough={() => console.log('Player is playing music right now.') }
-        listenInterval={1000}
-        onListen={() => setSeconds(player.audioEl.current.currentTime)}
-        // onPlay={() => setIsPlaying(true)}
-        // onPause={() => setIsPlaying(false)}
+	// Duration Handler
+	let durTemp = null;
+	useEffect(() => {
+	  let audPlayer = document.getElementById('player');
+	  audPlayer.addEventListener('durationchange', () => {
+	    setDuration(audPlayer.duration);
+	  })
+	}, [durTemp]);
+
+	// Change State if user selected a music
+	let [compiledMusicData, setCompiledMusicData] = useState({
+		src: 'Not assigned',
+		title: 'Not assigned',
+		ft: 'Not assigned',
+		album: 'Not assigned',
+		albumTBS: 'Not assigned',
+		albumTBL: 'Not assigned',
+	});
+
+	let updateCurrentMusic = (update) => {
+		console.log(update);
+
+		setCompiledMusicData(update);
+		setCurrentMusic(update.src);
+	}
+
+	return (
+		<React.Fragment>
+
+			<ReactAudioPlayer
+				src={currentMusic}
+				autoPlay
+				ref={ e => player = e }
+				id="player"
+				onCanPlayThrough={() => console.log('player can now fully played') }
+				onLoadedMetadata={() => console.log("Metadata Downloaded") }
+				listenInterval={500}
+				onListen={() => setSeconds(player.audioEl.current.currentTime)}
+				onPlay={() => setPlaying(true)}
+				onPause={() => setPlaying(false)}
+			/>
+
+			<ArtistHeader name="Post Malone"/>
+			
+      <MusicContainer
+        activeIndex={activeIndex}
+				setActiveIndex={setActiveIndex}
+				updateCurrentMusic={updateCurrentMusic}
+			/>
+
+			<BottomPlayer
+				compiledMusicData={compiledMusicData}
+				setCompiledMusicData={setCompiledMusicData}
+				playing={playing}
+				seconds={seconds}
+				duration={duration}
+        showTrack={showTrack}
+        setShowTrack={setShowTrack}
+			/>
+
+      <MusicTrack
+        compiledMusicData={compiledMusicData}
+        showTrack={showTrack}
+        setShowTrack={setShowTrack}
+        playing={playing}
+        seconds={seconds}
+        duration={duration}
       />
 
-      <div className="artist">Post Malone</div>
-
-      <div className="music-grid">
-        {post_malone.musics.map((music, i) => (
-          <React.Fragment key={i + 1}>
-          
-            <div className="music-bar"
-              onClick= {
-                () => {
-                  setCurrentMusic(music.src);
-                  setCurrentMusicTitle(music.title);
-                }
-              }
-            >
-              {music.title}
-            </div>
-          </React.Fragment>
-        ))}
-      </div>
-
-      <div className="bottom-player"
-        style={{
-          bottom: currentMusicTitle === null ? '-56px' : '0'
-        }}
-      >
-
-        <div className="duration-progress"
-          style={{
-            width: `${(seconds / duration) * 100}%`,
-          }}
-        />
-
-        <div className="music-title">
-          <div className="marquee-text">
-            {currentMusicTitle === null ? '' : currentMusicTitle}
-          </div>
-        </div>
-
-        <div className="music-control">
-          <div className="music-title-wrapper" />
-          <div className="music-state" />
-        </div>
-
-        {/* <div className="music-control"></div> */}
-      </div>
-
-    </React.Fragment>
-  );
+		</React.Fragment>
+	);
 }
 
 export default App;
