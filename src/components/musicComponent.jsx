@@ -23,6 +23,8 @@ let MusicComponent = props => {
 
       <div className="music-state"
         onClick={() => {
+          let audio = document.getElementsByTagName("audio")[0];
+          audio.load();
           updateCurrentMusic(music);
           setActiveMusic(index);
           updateCompStates(index);

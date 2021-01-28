@@ -6,9 +6,9 @@ let ArtistHeader = props => {
   return (
     <div className="artist-header">
 
-      <div className="info-button">
+      {/* <div className="info-button">
         <i>i</i>
-      </div>
+      </div> */}
 
       <div className="image-container">
         <img src={ArtistImage} alt="artist" />

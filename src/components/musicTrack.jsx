@@ -63,7 +63,7 @@ let MusicTrack = props => {
       </div>
 
       <div className="track-album">
-         Playing from Album<br/>
+         Playing from Post Malone's Album<br/>
          <div>{album}</div>
       </div>
 

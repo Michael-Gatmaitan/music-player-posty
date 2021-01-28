@@ -59,6 +59,7 @@ function App() {
 				id="player"
 				onCanPlayThrough={() => console.log('player can now fully played') }
 				onLoadedMetadata={() => console.log("Metadata Downloaded") }
+				onCanPlay={() => console.log("Is loaded")}
 				listenInterval={500}
 				onListen={() => setSeconds(player.audioEl.current.currentTime)}
 				onPlay={() => setPlaying(true)}
