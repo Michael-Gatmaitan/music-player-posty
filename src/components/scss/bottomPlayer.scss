@@ -1,13 +1,15 @@
 .bottom-player {
   width: 100%;
   padding: 15px;
-  background-color: #fff;
+  background-color: rgba(#fff, 0.6);
+  backdrop-filter: blur(20px);
   position: fixed;
   left: 0;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   transition: .25s ease-in-out;
+  box-shadow: 0 -8px 16px rgba(#000, 0.12);
 
   .track-opener {
     width: 100%;

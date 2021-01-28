@@ -1,7 +1,9 @@
 .bottom-player {
   width: 100%;
   padding: 15px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -13,6 +15,8 @@
           justify-content: space-between;
   -webkit-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
+  -webkit-box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .bottom-player .track-opener {

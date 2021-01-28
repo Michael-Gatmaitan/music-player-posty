@@ -65,7 +65,7 @@ let MusicContainer = props => {
 	return (
 		<div className="music-container">
 			<div className="music-header">
-				Songs({musicCompStates.length})
+				Songs ({musicCompStates.length})
 			</div>
 			<div className="music-comp-container">
 

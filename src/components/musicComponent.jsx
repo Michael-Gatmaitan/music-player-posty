@@ -8,7 +8,6 @@ let MusicComponent = props => {
     music,
     index,
     setActiveMusic,
-    compData,
     updateCompStates
   } = props;
 

@@ -37,7 +37,7 @@ let BottomPlayer = props => {
   return (
     <div className="bottom-player"
       style={{
-        bottom: title === 'Not assigned' ? "-78px" : 0,
+        bottom: title === 'Not assigned' ? "-80px" : 0,
       }}
       ref={ bottomPlayer }
     >
