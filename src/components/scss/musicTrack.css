@@ -58,15 +58,14 @@
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 16px;
-  overflow: hidden;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .music-track .track-album-thumbnail img {
   width: 100%;
-  max-width: 330px;
+  max-width: 300px;
   border-radius: 16px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .music-track .track-song-info {

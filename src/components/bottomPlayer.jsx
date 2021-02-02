@@ -1,11 +1,6 @@
 import React, { useRef } from 'react';
 import './scss/bottomPlayer.css';
 
-import {
-  Play,
-  Pause
-} from '../source/post_malone/exporter.js';
-
 let BottomPlayer = props => {
   let {
     compiledMusicData,
@@ -14,6 +9,8 @@ let BottomPlayer = props => {
     duration,
     showTrack,
     setShowTrack,
+    Play,
+    Pause
   } = props;
 
   let stateHandler = () => {

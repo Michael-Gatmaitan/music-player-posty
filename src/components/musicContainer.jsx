@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './scss/musicContainer.css';
 import MusicComponent from './musicComponent';
 
+// Imports all music from ..source/{artist}/expoter.js
 import {
 	Musics,
-	Play,
-	Pause
-} from '../source/post_malone/exporter.js';
+} from '../source/post_malone/exporter';
 
 let setActiveMusic = (index) => {
 	let musicComponents = [...document.getElementsByClassName("music-component")];
@@ -25,7 +24,9 @@ let MusicContainer = props => {
 	let {
     updateCurrentMusic,
     activeIndex,
-    setActiveIndex
+    setActiveIndex,
+		Play,
+		Pause
   } = props;
 
 	let [musicCompStates, setMusicCompStates] = useState([]);

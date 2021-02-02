@@ -1,14 +1,18 @@
 import React from 'react';
-import { ArtistImage } from '../source/post_malone/exporter.js';
 import './scss/artistHeader.css';
 
 let ArtistHeader = props => {
+
+  let { ArtistImage } = props;
+
   return (
     <div className="artist-header">
 
       {/* <div className="info-button">
         <i>i</i>
       </div> */}
+
+      <div className="menu"></div>
 
       <div className="image-container">
         <img src={ArtistImage} alt="artist" />

@@ -1,6 +1,5 @@
 import React from 'react';
 import './scss/musicTrack.css';
-import { PlayV, PauseV } from '../source/post_malone/exporter';
 
 let MusicTrack = props => {
 
@@ -10,7 +9,9 @@ let MusicTrack = props => {
     setShowTrack,
     playing,
     seconds,
-    duration
+    duration,
+    PlayV,
+    PauseV
   } = props;
 
   let {

@@ -15,14 +15,14 @@
   display: grid;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-gap: 12px;
+  grid-gap: 10px;
 }
 
 .music-container .music-comp-container .music-component {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 73px auto 60px;
-      grid-template-columns: 73px auto 60px;
+  -ms-grid-columns: 73px auto;
+      grid-template-columns: 73px auto;
   -ms-grid-rows: 73px;
       grid-template-rows: 73px;
   background-color: #434343;
@@ -32,6 +32,7 @@
   overflow: hidden;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
+  position: relative;
 }
 
 .music-container .music-comp-container .music-component .music-album-thumbnail {
@@ -59,16 +60,17 @@
   transition: all 0.1s ease-in;
 }
 
-.music-container .music-comp-container .music-component .music-state {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.music-container .music-comp-container .music-component .name-fade {
+  height: 100%;
+  width: 60px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(67, 67, 67, 0)), color-stop(rgba(67, 67, 67, 0.65)), to(#434343));
+  background: linear-gradient(90deg, rgba(67, 67, 67, 0), rgba(67, 67, 67, 0.65), #434343);
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 
 .music-container .music-comp-container .active {
@@ -77,5 +79,11 @@
 
 .music-container .music-comp-container .active .music-title {
   color: #121212;
+}
+
+.music-container .music-comp-container .active .name-fade {
+  opacity: 0;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 /*# sourceMappingURL=musicContainer.css.map */

@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 let MusicComponent = props => {
 
   let {
     updateCurrentMusic,
-    Play,
     music,
     index,
     setActiveMusic,
+    activeIndex,
     updateCompStates
   } = props;
 
   return (
-    <div className="music-component">
+    <div className="music-component"
+      onClick={() => {
+        let audio = document.getElementsByTagName("audio")[0];
+        audio.load();
+        updateCurrentMusic(music);
+        setActiveMusic(index);
+        updateCompStates(index);
+
+        console.log(index, activeIndex);
+      }}
+    >
       <div className="music-album-thumbnail">
         <img src={music.albumTBS} alt="album" />
       </div>
@@ -21,21 +31,7 @@ let MusicComponent = props => {
         {music.title}
       </div>
 
-      <div className="music-state"
-        onClick={() => {
-          let audio = document.getElementsByTagName("audio")[0];
-          audio.load();
-          updateCurrentMusic(music);
-          setActiveMusic(index);
-          updateCompStates(index);
-        }}
-
-        // style={{
-        //     opacity: compData.playing ? 0 : 1
-        //   }}
-      >
-        <img src={Play} alt="state" />
-      </div>
+      <div className="name-fade"></div>
     </div>
   )
 }

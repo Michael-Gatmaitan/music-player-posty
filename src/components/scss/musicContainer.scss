@@ -16,17 +16,18 @@
     margin-top: 16px;
     display: grid;
     grid-template-rows: auto;
-    grid-gap: 12px;
+    grid-gap: 10px;
 
     .music-component {
       display: grid;
-      grid-template-columns: 73px auto 60px;
+      grid-template-columns: 73px auto;
       grid-template-rows: 73px;
       background-color: #434343;
       box-shadow: 0 6px 12px rgba(#000, 0.12);
       border-radius: 12px;
       overflow: hidden;
       transition: all 0.1s ease-in;
+      position: relative;
 
       .music-album-thumbnail {
         transition: all 0.1s ease-in;
@@ -45,10 +46,14 @@
         transition: all 0.1s ease-in;
       }
 
-      .music-state {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .name-fade {
+        height: 100%;
+        width: 60px;
+        background: linear-gradient(90deg, rgba(#434343, 0), rgba(#434343, .65), rgba(#434343, 1));
+        position: absolute;
+        right: 0;
+        transition: all 0.1s ease-in;
+        transition-delay: 0.1s;
       }
     }
 
@@ -57,6 +62,11 @@
 
       .music-title {
         color: #121212;
+      }
+
+      .name-fade {
+        opacity: 0;
+        transition-delay: 0s;
       }
     }
   }

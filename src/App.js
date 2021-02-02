@@ -1,11 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
+// Import all image here and pass as props for performance
+import {
+  ArtistImage,
+} from './source/post_malone/exporter';
+
 // Components
 import ArtistHeader from './components/artistHeader';
 import MusicContainer from './components/musicContainer';
 import BottomPlayer from './components/bottomPlayer';
 import MusicTrack from './components/musicTrack';
+
+// SVGs to Props
+import { Play, Pause, PlayV, PauseV } from './svg/svgExporter';
 
 function App() {
 
@@ -66,7 +74,10 @@ function App() {
 				onPause={() => setPlaying(false)}
 			/>
 
-			<ArtistHeader name="Post Malone"/>
+			<ArtistHeader
+				name="Post Malone"
+				ArtistImage={ArtistImage}
+			/>
 			
       <MusicContainer
         activeIndex={activeIndex}
@@ -82,6 +93,9 @@ function App() {
 				duration={duration}
         showTrack={showTrack}
         setShowTrack={setShowTrack}
+
+				Play={Play}
+				Pause={Pause}
 			/>
 
       <MusicTrack
@@ -91,6 +105,9 @@ function App() {
         playing={playing}
         seconds={seconds}
         duration={duration}
+
+				PlayV={PlayV}
+				PauseV={PauseV}
       />
 
 		</React.Fragment>

@@ -27,29 +27,24 @@ import PostMaloneMusic10 from './music/Post Malone - Take It Back ft. Juice WRLD
 import PostMaloneMusic11 from './music/Post Malone - White Iverson.mp3';
 import PostMaloneMusic12 from './music/Post Malone, Swae Lee - Sunflower.mp3';
 
-// SVG
-import Play from './image/svg/play.svg';
-import Pause from './image/svg/pause.svg';
+export { ArtistImage };
 
-import PlayV from './image/svg/play_v.svg';
-import PauseV from './image/svg/pause_v.svg';
+/* Musics Object layout
 
-let AlbumThumbnails = {
-  BeerbongsAndBentleys_Small,
-  HollywoodsBleeding_Small,
-  Stoney_Small,
+  type -> [Array, {Object: value}]
 
-  BeerbongsAndBentleys_Large,
-  HollywoodsBleeding_Large,
-  Stoney_Large,
+  let Musics = [
+    {
+      src: importValue, // Music
+      title: String,
+      ft: String,
+      album: String,
+      albumTBS: importValue, // Image -> Small
+      albumTBL: importValue, // Image -> Large
+    }, { ... }
+  ];
 
-  NoAlbum,
-};
-
-export {
-  ArtistImage,
-  AlbumThumbnails
-};
+*/
 
 let Musics = [
   {
@@ -140,8 +135,6 @@ let Musics = [
 ];
 
 export { Musics };
-
-export { Play, Pause, PlayV, PauseV };
 
 // Albums:
 //     Hollywoodsbleeding
