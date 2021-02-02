@@ -82,7 +82,6 @@ let MusicContainer = props => {
 						setActiveMusic={setActiveMusic}
 						key={i}
 
-						compData={music}
 						updateCompStates={updateCompStates}
 					/>
 				))}

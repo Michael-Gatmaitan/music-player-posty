@@ -14,6 +14,12 @@ $yellow: #F1B61A;
   align-items: center;
   text-align: center;
 
+  .menu {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+  }
+
   .info-button {
     width: 40px;
     height: 40px;

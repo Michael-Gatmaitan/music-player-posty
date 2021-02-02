@@ -11,6 +11,12 @@
   text-align: center;
 }
 
+.artist-header .menu {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+
 .artist-header .info-button {
   width: 40px;
   height: 40px;

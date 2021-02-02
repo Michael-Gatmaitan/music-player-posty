@@ -4,6 +4,7 @@ import './scss/musicTrack.css';
 let MusicTrack = props => {
 
   let {
+    artistName,
     compiledMusicData,
     showTrack,
     setShowTrack,
@@ -64,7 +65,7 @@ let MusicTrack = props => {
       </div>
 
       <div className="track-album">
-         Playing from Post Malone's Album<br/>
+         Playing from {artistName}'s Album<br/>
          <div>{album}</div>
       </div>
 
@@ -77,7 +78,7 @@ let MusicTrack = props => {
           {title}
         </div>
         <div className="track-ft">
-          {ft === 'Unknown' ? 'Post Malone' : `ft. ${ft}`}
+          {ft === 'Unknown' ? artistName : `ft. ${ft}`}
         </div>
       </div>
 

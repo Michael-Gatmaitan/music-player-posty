@@ -10,6 +10,7 @@ $yellow: #F1B61A;
 body {
   margin: 40px 15px 90px;
   background: $violet;
+  overflow-x: hidden;
 }
 
 @mixin inter24B {

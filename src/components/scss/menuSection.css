@@ -1,0 +1,118 @@
+.menu-section {
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background: -webkit-gradient(linear, left top, right top, from(#000), to(rgba(0, 0, 0, 0.9)));
+  background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.9));
+  position: fixed;
+  left: 0;
+  z-index: 999;
+  padding: 40px 15px 0;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.menu-section .menu-buttons {
+  list-style-type: none;
+  padding-top: calc(50px - 16px);
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 24px;
+  padding-left: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.menu-section .menu-buttons li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-section .menu-buttons .source-code-con .source-code {
+  display: inline-block;
+  padding: 12px 15px;
+  background-color: #F1B61A;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-section .menu-buttons .source-code-con .source-code div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-section .menu-buttons .source-code-con .source-code div span {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  margin-left: 8px;
+  color: #121212;
+}
+
+.menu-section .social-media-links {
+  display: -ms-grid;
+  display: grid;
+  margin-top: calc(80px - 24px);
+  padding: 0;
+}
+
+.menu-section .social-media-links li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.menu-section .social-media-links li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-section .social-media-links li a span {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-left: 12px;
+}
+
+.menu-section .sc-big-logo {
+  position: absolute;
+  bottom: 20px;
+  right: -50px;
+  width: 256px;
+  height: 256px;
+}
+
+.menu-section .sc-big-logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-filter: opacity(0.65);
+          filter: opacity(0.65);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+/*# sourceMappingURL=menuSection.css.map */

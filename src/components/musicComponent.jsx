@@ -7,7 +7,6 @@ let MusicComponent = props => {
     music,
     index,
     setActiveMusic,
-    activeIndex,
     updateCompStates
   } = props;
 
@@ -20,7 +19,7 @@ let MusicComponent = props => {
         setActiveMusic(index);
         updateCompStates(index);
 
-        console.log(index, activeIndex);
+        console.log(index);
       }}
     >
       <div className="music-album-thumbnail">

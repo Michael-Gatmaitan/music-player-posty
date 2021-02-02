@@ -4,6 +4,7 @@ import ReactAudioPlayer from 'react-audio-player';
 // Import all image here and pass as props for performance
 import {
   ArtistImage,
+	artistName,
 } from './source/post_malone/exporter';
 
 // Components
@@ -11,6 +12,7 @@ import ArtistHeader from './components/artistHeader';
 import MusicContainer from './components/musicContainer';
 import BottomPlayer from './components/bottomPlayer';
 import MusicTrack from './components/musicTrack';
+import MenuSection from './components/menuSection';
 
 // SVGs to Props
 import { Play, Pause, PlayV, PauseV } from './svg/svgExporter';
@@ -30,6 +32,10 @@ function App() {
 	let [duration, setDuration] = useState(0);
 
   let [showTrack, setShowTrack] = useState(false);
+
+	let [showMenu, setShowMenu] = useState(false);
+
+	let menuSection = useRef(null);
 
 	// Duration Handler
 	let durTemp = null;
@@ -74,8 +80,16 @@ function App() {
 				onPause={() => setPlaying(false)}
 			/>
 
+			<MenuSection
+				showMenu={showMenu}
+				setShowMenu={setShowMenu}
+				menuSection={menuSection}
+			/>
+
 			<ArtistHeader
-				name="Post Malone"
+				name={artistName}
+				showMenu={showMenu}
+				setShowMenu={setShowMenu}
 				ArtistImage={ArtistImage}
 			/>
 			
@@ -87,7 +101,6 @@ function App() {
 
 			<BottomPlayer
 				compiledMusicData={compiledMusicData}
-				setCompiledMusicData={setCompiledMusicData}
 				playing={playing}
 				seconds={seconds}
 				duration={duration}
@@ -99,6 +112,7 @@ function App() {
 			/>
 
       <MusicTrack
+				artistName={artistName}
         compiledMusicData={compiledMusicData}
         showTrack={showTrack}
         setShowTrack={setShowTrack}

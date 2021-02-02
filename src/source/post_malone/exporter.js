@@ -46,6 +46,10 @@ export { ArtistImage };
 
 */
 
+let artistName = "Post Malone";
+
+export { artistName };
+
 let Musics = [
   {
     src: PostMaloneMusic1,
