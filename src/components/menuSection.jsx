@@ -9,14 +9,9 @@ import {
   Snapchat,
   GithubB,
 } from '../svg/svgExporter';
+import { TimelineLite } from 'gsap';
 
 let MenuSection = props => {
-
-  let {
-    showMenu,
-    setShowMenu,
-    menuSection
-  } = props;
 
   let scLinks = [
     {
@@ -48,26 +43,39 @@ let MenuSection = props => {
   ]
 
   return (
-    <div className="menu-section"
-      ref={ menuSection }
-      style={{
-        top: showMenu ? "0" : "-60vh",
-        pointerEvents: showMenu ? "auto" : "none",
-        opacity: showMenu ? 1 : 0
-      }}
-    >
+    <div className="menu-section">
       <div className="back"
-        onClick={() => setShowMenu(false)}
+        onClick={() => {
+
+          let openMenu = new TimelineLite();
+
+          openMenu.staggerFromTo(".a-tag-onLink", .3, {
+            opacity: 1,
+            y: 0,
+          }, {
+            opacity: 0,
+            y: -30,
+            ease: "power2.inOut",
+          }, .1);
+          openMenu.to(".menu-section", {
+            duration: 0.1,
+            top: "-40vh",
+            pointerEvents: "none",
+            opacity: 0,
+            ease: "power3.inOut",
+          }, "-=0.5");
+
+        }}
       >
         <img src={Back} alt="back-icon" />
       </div>
 
       <ul className="menu-buttons">
-        <li>Main Project</li>
-        <li><a href="#">About</a></li>
-        <li className="source-code-con">
-          <a href="https://www.github.com">
-            <div className="source-code">
+        <li className="menu-btn">Main Project</li>
+        <li className="menu-btn"><a href="#">About</a></li>
+        <li className="source-code-con menu-btn">
+          <a href="https://github.com/Michael-Gatmaitan/music-player-testing" target="_blank">
+            <div className="source-code menu-btn">
               <div>
                 <img src={GithubB} alt="github_b-icon" width="30" />
                 <span>Source Code</span>
@@ -80,12 +88,11 @@ let MenuSection = props => {
       <ul className="social-media-links">
         {scLinks.map(scLink => (
           <li
-            className={`${scLink.label.toLocaleLowerCase()} scButton`}
+            className={`${scLink.label.toLocaleLowerCase()} scButton menu-btn`}
             key={scLink.id}
             onMouseOver={() => {
               let scButtons = [...document.getElementsByClassName("scButton")];
               let bigLogo = [...document.getElementsByClassName("big-logo")];
-              let hoveredButton = scButtons[scLink.id - 1];
 
               scButtons.forEach((scb, i) => {
                 scb.style.opacity = i === (scLink.id - 1) ? 1 : 0.35;
@@ -109,7 +116,7 @@ let MenuSection = props => {
               })
             }}
           >
-            <a href={scLink.link}>
+            <a href={scLink.link} target="_blank" className="a-tag-onLink">
               <img src={scLink.svg} alt={`link No${scLink.id}`} width="30" />
               <span>{scLink.label}</span>
             </a>

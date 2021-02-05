@@ -4,12 +4,13 @@
   opacity: 1;
   background: linear-gradient(90deg, #000, rgba(#000, 0.9));
   position: fixed;
-  // top: -70vh;
+  top: -40vh;
   left: 0;
   z-index: 999;
   padding: 40px 15px 0;
-  // opacity: 0;
+  opacity: 0;
   transition: .3s ease-out;
+  pointer-events: none;
 
   .menu-buttons {
     list-style-type: none;

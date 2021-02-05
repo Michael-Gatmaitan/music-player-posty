@@ -33,10 +33,6 @@ function App() {
 
   let [showTrack, setShowTrack] = useState(false);
 
-	let [showMenu, setShowMenu] = useState(false);
-
-	let menuSection = useRef(null);
-
 	// Duration Handler
 	let durTemp = null;
 	useEffect(() => {
@@ -80,17 +76,14 @@ function App() {
 				onPause={() => setPlaying(false)}
 			/>
 
-			<MenuSection
-				showMenu={showMenu}
-				setShowMenu={setShowMenu}
-				menuSection={menuSection}
-			/>
+			<MenuSection />
 
 			<ArtistHeader
 				name={artistName}
-				showMenu={showMenu}
-				setShowMenu={setShowMenu}
+				// showMenu={showMenu}
+				// setShowMenu={setShowMenu}
 				ArtistImage={ArtistImage}
+				// openMenu={openMenu}
 			/>
 			
       <MusicContainer
