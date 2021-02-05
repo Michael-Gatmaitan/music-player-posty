@@ -23,7 +23,7 @@ let MusicTrack = props => {
   } = compiledMusicData;
 
   let closeTrack = () => {
-    setShowTrack(!showTrack);
+    setShowTrack(false);
     let bottomPlayer =
     document.getElementsByClassName("bottom-player")[0];
     let { body } = document;

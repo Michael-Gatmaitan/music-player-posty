@@ -19,7 +19,7 @@ let BottomPlayer = props => {
   }
 
   let trackOpenFunc = () => {
-    setShowTrack(!showTrack);
+    setShowTrack(true);
     let showTrackState = !showTrack;
 
     bottomPlayer.current.style.bottom = showTrackState ? "calc(100vh - 78px)" : "0";

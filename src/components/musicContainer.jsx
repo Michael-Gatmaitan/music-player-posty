@@ -7,18 +7,6 @@ import {
 	Musics,
 } from '../source/post_malone/exporter';
 
-let setActiveMusic = (index) => {
-	let musicComponents = [...document.getElementsByClassName("music-component")];
-
-	for (let i = 0; i < musicComponents.length; i += 1) {
-		if (i === index) {
-			musicComponents[i].classList.add("active");
-		} else {
-			musicComponents[i].classList.value = "music-component";
-		}
-	}
-}
-
 let MusicContainer = props => {
 
 	let {
@@ -26,7 +14,9 @@ let MusicContainer = props => {
     activeIndex,
     setActiveIndex,
 		Play,
-		Pause
+		Pause,
+		showTrack,
+		setShowTrack
   } = props;
 
 	let [musicCompStates, setMusicCompStates] = useState([]);
@@ -62,6 +52,19 @@ let MusicContainer = props => {
 
 		setMusicCompStates(copy);
 	}
+
+	let setActiveMusic = (index, musicData) => {
+
+		let musicComponents = [...document.getElementsByClassName("music-component")];
+	
+		for (let i = 0; i < musicComponents.length; i += 1) {
+			if (i === index) {
+				musicComponents[i].classList.add("active");
+			} else {
+				musicComponents[i].classList.value = "music-component";
+			}
+		}
+	}
   
 	return (
 		<div className="music-container">
@@ -80,6 +83,8 @@ let MusicContainer = props => {
 						index={i}
             activeIndex={activeIndex}
 						setActiveMusic={setActiveMusic}
+						showTrack={showTrack}
+						setShowTrack={setShowTrack}
 						key={i}
 
 						updateCompStates={updateCompStates}

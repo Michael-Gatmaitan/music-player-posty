@@ -85,11 +85,13 @@ function App() {
 				ArtistImage={ArtistImage}
 				// openMenu={openMenu}
 			/>
-			
+
       <MusicContainer
         activeIndex={activeIndex}
 				setActiveIndex={setActiveIndex}
 				updateCurrentMusic={updateCurrentMusic}
+				showTrack={showTrack}
+				setShowTrack={setShowTrack}
 			/>
 
 			<BottomPlayer
