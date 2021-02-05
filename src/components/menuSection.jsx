@@ -9,7 +9,9 @@ import {
   Snapchat,
   GithubB,
 } from '../svg/svgExporter';
-import { TimelineLite } from 'gsap';
+import gsap, { TimelineLite } from 'gsap';
+
+gsap.registerPlugin(TimelineLite);
 
 let MenuSection = props => {
 
