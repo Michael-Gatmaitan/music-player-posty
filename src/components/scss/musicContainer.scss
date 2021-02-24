@@ -34,6 +34,8 @@
 
         img {
           width: 73px;
+          user-select: none;
+          pointer-events: none;
         }
       }
 
@@ -44,6 +46,7 @@
         align-items: center;
         padding-left: 12px;
         transition: all 0.1s ease-in;
+        user-select: none;
       }
 
       .name-fade {

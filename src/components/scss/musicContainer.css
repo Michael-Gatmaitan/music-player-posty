@@ -42,6 +42,11 @@
 
 .music-container .music-comp-container .music-component .music-album-thumbnail img {
   width: 73px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .music-container .music-comp-container .music-component .music-title {
@@ -58,6 +63,10 @@
   padding-left: 12px;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .music-container .music-comp-container .music-component .name-fade {

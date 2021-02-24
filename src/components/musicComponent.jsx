@@ -25,6 +25,7 @@ let MusicComponent = props => {
   return (
     <div className="music-component"
       onClick={ e => {
+        console.log(e.target.parentElement);
         let alreadyActive = e.target.parentElement.classList.value.includes("active");
         // check if active player component is clicked then open music track if true.
         console.log(alreadyActive);
