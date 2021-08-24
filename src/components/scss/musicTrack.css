@@ -8,7 +8,7 @@
   pointer-events: none;
   -webkit-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
-  padding: 40px 40px 0 40px;
+  padding: 40px 40px  0 40px;
 }
 
 .music-track .track-closer {
@@ -166,7 +166,7 @@
   left: 50%;
   color: rgba(0, 0, 0, 0.65);
   text-align: center;
-  width: calc(100& - (40px * 2));
+  width: calc(100& - (40px  * 2));
 }
 
 .music-track .tag span {

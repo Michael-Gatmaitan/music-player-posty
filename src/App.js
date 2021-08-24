@@ -13,6 +13,7 @@ import MusicContainer from './components/musicContainer';
 import BottomPlayer from './components/bottomPlayer';
 import MusicTrack from './components/musicTrack';
 import MenuSection from './components/menuSection';
+import About from './components/about';
 
 // SVGs to Props
 import { Play, Pause, PlayV, PauseV } from './svg/svgExporter';
@@ -118,6 +119,8 @@ function App() {
 				PlayV={PlayV}
 				PauseV={PauseV}
       />
+
+			<About />
 
 		</React.Fragment>
 	);

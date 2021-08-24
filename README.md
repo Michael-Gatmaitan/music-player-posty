@@ -9,5 +9,4 @@ It'll be a Web based music-player made with ReactJS :)).# music-player-testing
 
 
 ## Note:
-This is the updated version of my music-player testing, you can visit the first
-version of my testing here https://github.com/Michael-Gatmaitan/music-player-testing
+This is where I practice & test my music-player, you can visit my main web-based music-player project here https://omo-music.netlify.app and it's repo on GitHub https://github.com/Michael-Gatmaitan/omo-music
